@@ -1,0 +1,312 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Design tokens para tema vermelho, preto, amarelo e branco */
+  --background: #ffffff; /* Fundo branco limpo */
+  --foreground: #000000; /* Texto preto */
+  --card: #fefce8; /* Cards com toque amarelo suave */
+  --card-foreground: #000000; /* Texto dos cards */
+  --popover: rgba(255, 255, 255, 0.95); /* Popovers com transparência */
+  --popover-foreground: #000000; /* Texto dos popovers */
+  --primary: #ff0000; /* Vermelho vibrante para CTAs */
+  --primary-foreground: #ffffff; /* Texto branco nos botões primários */
+  --secondary: #000000; /* Preto para elementos secundários */
+  --secondary-foreground: #ffffff; /* Texto branco nos elementos secundários */
+  --muted: #fefce8; /* Áreas com destaque suave */
+  --muted-foreground: #000000; /* Texto das áreas destacadas */
+  --accent: #ffd700; /* Amarelo dourado para acentos */
+  --accent-foreground: #000000; /* Texto dos elementos com acento */
+  --destructive: #ff4c4c; /* Vermelho para erros */
+  --destructive-foreground: #ffffff; /* Texto dos elementos destrutivos */
+  --border: #d1d5db; /* Bordas suaves */
+  --input: #f3f4f6; /* Fundo dos inputs */
+  --ring: rgba(255, 0, 0, 0.5); /* Anel de foco vermelho */
+  --chart-1: #ff0000; /* Cor 1 dos gráficos */
+  --chart-2: #ffd700; /* Cor 2 dos gráficos */
+  --chart-3: #000000; /* Cor 3 dos gráficos */
+  --chart-4: #fefce8; /* Cor 4 dos gráficos */
+  --chart-5: #ff4c4c; /* Cor 5 dos gráficos */
+  --radius: 0.5rem; /* Bordas arredondadas */
+  --sidebar: #fefce8; /* Fundo da sidebar */
+  --sidebar-foreground: #000000; /* Texto da sidebar */
+  --sidebar-primary: #ff0000; /* Cor primária da sidebar */
+  --sidebar-primary-foreground: #ffffff; /* Texto primário da sidebar */
+  --sidebar-accent: #ffd700; /* Acento da sidebar */
+  --sidebar-accent-foreground: #000000; /* Texto do acento da sidebar */
+  --sidebar-border: #d1d5db; /* Borda da sidebar */
+  --sidebar-ring: rgba(255, 0, 0, 0.3); /* Anel de foco da sidebar */
+}
+
+.dark {
+  --background: #0f0f0f;
+  --foreground: #ffffff;
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+  --popover: rgba(26, 26, 26, 0.95);
+  --popover-foreground: #ffffff;
+  --primary: #ff3333;
+  --primary-foreground: #ffffff;
+  --secondary: #333333;
+  --secondary-foreground: #ffffff;
+  --muted: #1a1a1a;
+  --muted-foreground: #a3a3a3;
+  --accent: #ffd700;
+  --accent-foreground: #000000;
+  --destructive: #ff6666;
+  --destructive-foreground: #ffffff;
+  --border: #333333;
+  --input: #1a1a1a;
+  --ring: rgba(255, 51, 51, 0.5);
+  --chart-1: #ff3333;
+  --chart-2: #ffd700;
+  --chart-3: #ffffff;
+  --chart-4: #1a1a1a;
+  --chart-5: #ff6666;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ff3333;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffd700;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #333333;
+  --sidebar-ring: rgba(255, 51, 51, 0.3);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Animações profissionais para elementos */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 8s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  .animate-scale-hover {
+    transition: transform 0.3s ease;
+  }
+
+  .animate-scale-hover:hover {
+    transform: scale(1.05);
+  }
+
+  /* Animação de produtos caindo */
+  .falling-products {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .falling-item {
+    position: absolute;
+    opacity: 0.15;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes bounceGentle {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes floatSlow {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(5deg);
+    }
+  }
+
+  @keyframes glowPulse {
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(255, 0, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.3);
+    }
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-100px) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.15;
+    }
+    90% {
+      opacity: 0.15;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Botões com animações profissionais */
+  .btn-professional {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .btn-professional::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-professional:hover::before {
+    left: 100%;
+  }
+
+  .btn-professional:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Cards com efeitos 3D */
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+  }
+
+  .card-3d:hover {
+    transform: rotateY(5deg) rotateX(5deg) translateZ(10px);
+  }
+
+  /* Gradientes profissionais */
+  .gradient-professional {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(254, 252, 232, 0.9) 25%,
+      rgba(255, 0, 0, 0.05) 50%,
+      rgba(255, 215, 0, 0.05) 75%,
+      rgba(255, 255, 255, 0.95) 100%
+    );
+    backdrop-filter: blur(10px);
+  }
+
+  /* Texto com sombra profissional */
+  .text-shadow-professional {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), 2px 2px 4px rgba(255, 0, 0, 0.1), 3px 3px 6px rgba(0, 0, 0, 0.05);
+  }
+}
