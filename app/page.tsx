@@ -182,14 +182,18 @@ export default function MixGuaraHome() {
         </Button>
       </div>
 
-      <header className="bg-black border-b-2 border-red-600 sticky top-0 z-50 shadow-md">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+      <header className="bg-black border-b-2 border-red-600 sticky top-0 z-50 shadow-md h-24">
+        <div className="container mx-auto px-4 h-full">
+          <div className="flex items-center justify-between h-full">
             <div className="flex items-center space-x-3">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/o-MCV79nSJ9cXt5gkYFolHf0cFJDRwJ9.png"
+                src="/logo-mixguara.png"
                 alt="Mix Guará Logo"
                 className="h-20 w-auto hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60' viewBox='0 0 120 60'%3E%3Crect width='120' height='60' fill='%23dc2626'/%3E%3Ctext x='60' y='35' fontFamily='Arial' fontSize='14' fontWeight='bold' textAnchor='middle' fill='white'%3EMix Guará%3C/text%3E%3C/svg%3E"
+                }}
               />
             </div>
 

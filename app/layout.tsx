@@ -22,20 +22,20 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/shopping-cart-icon-red-background.png",
+        url: "/favicon.ico",
         sizes: "32x32",
-        type: "image/svg+xml",
+        type: "image/x-icon",
       },
       {
-        url: "/shopping-cart-icon-red-background.png",
+        url: "/favicon.ico",
         sizes: "16x16",
-        type: "image/svg+xml",
+        type: "image/x-icon",
       },
     ],
     apple: {
-      url: "/shopping-cart-icon-red-background.png",
+      url: "/favicon.ico",
       sizes: "180x180",
-      type: "image/svg+xml",
+      type: "image/x-icon",
     },
   },
   openGraph: {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
   },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
