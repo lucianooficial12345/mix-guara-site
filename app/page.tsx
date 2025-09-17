@@ -4,19 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {
-  MapPin,
-  Clock,
-  Instagram,
-  Facebook,
-  Star,
-  ChevronRight,
-  Menu,
-  X,
-  MessageCircle,
-  PhoneOff,
-  Users,
-} from "lucide-react"
+import { MapPin, Clock, Instagram, Facebook, ChevronRight, Menu, X, MessageCircle, PhoneOff, Users } from "lucide-react"
 
 function FallingProducts() {
   const products = ["🍎", "🥕", "🥛", "🍞", "🧀", "🍌", "🥩", "🛒", "🦩"]
@@ -58,9 +46,8 @@ export default function MixGuaraHome() {
       const closeTime = 11 * 60 + 30 // 11:30 em minutos
       return currentTime >= openTime && currentTime <= closeTime
     } else {
-      // Segunda a Sábado: 7:00 às 11:00 e 14:00 às 18:00
       const morningOpen = 7 * 60 // 7:00 em minutos
-      const morningClose = 11 * 60 // 11:00 em minutos
+      const morningClose = 11 * 60 + 30 // 11:30 em minutos
       const afternoonOpen = 14 * 60 // 14:00 em minutos
       const afternoonClose = 18 * 60 // 18:00 em minutos
 
@@ -440,7 +427,7 @@ export default function MixGuaraHome() {
                   <div className="flex justify-between items-center p-3 rounded-lg bg-red-50">
                     <span className="text-gray-700 font-medium">Segunda a Sábado:</span>
                     <div className="text-right">
-                      <div className="text-red-600 font-bold text-sm">07h00 – 11h00</div>
+                      <div className="text-red-600 font-bold text-sm">07h00 – 11h30</div>
                       <div className="text-red-600 font-bold text-sm">14h00 – 18h00</div>
                     </div>
                   </div>
@@ -524,96 +511,6 @@ export default function MixGuaraHome() {
             <p className="text-muted-foreground text-lg">Ofertas especiais que você não pode perder!</p>
           </div>
 
-          <div className="mb-12">
-            <Card className="bg-gradient-to-br from-purple-900/95 via-purple-700/90 to-pink-600/95 text-white shadow-2xl border-0 overflow-hidden relative backdrop-blur-sm">
-              {/* Enhanced animated background effects with transparency */}
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/15 via-transparent to-yellow-400/15 animate-pulse"></div>
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400/90 via-orange-400/90 to-red-400/90 animate-pulse"></div>
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-400/25 rounded-full blur-xl animate-bounce"></div>
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-400/25 rounded-full blur-xl animate-pulse"></div>
-
-              {/* Floating particles */}
-              <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
-              <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-white rounded-full animate-pulse"></div>
-              <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-orange-400 rounded-full animate-bounce"></div>
-
-              <div className="absolute top-4 right-4 z-20">
-                <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-4 py-2 rounded-full text-sm font-bold animate-bounce shadow-lg">
-                  🎁 SORTEIO OFICIAL
-                </div>
-              </div>
-
-              <CardHeader className="relative z-10 text-center py-8">
-                <div className="flex justify-center mb-6">
-                  <div className="relative group">
-                    <div className="w-32 h-24 bg-gradient-to-br from-gray-800 to-black rounded-lg border-4 border-gray-600 shadow-2xl transform group-hover:scale-110 transition-all duration-300">
-                      <div className="w-full h-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-md m-1 flex items-center justify-center relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
-                        <span className="text-white font-bold text-xs z-10">SMART TV</span>
-                      </div>
-                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-3 bg-gray-700 rounded-b-lg"></div>
-                      <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-16 h-2 bg-gray-600 rounded-full"></div>
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center animate-spin">
-                      ✨
-                    </div>
-                  </div>
-                </div>
-
-                <CardTitle className="text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-pulse">
-                  GRANDE SORTEIO
-                </CardTitle>
-                <div className="text-3xl font-bold mb-2 text-yellow-300 animate-bounce">TV SMART 32 POLEGADAS</div>
-                <CardDescription className="text-white/90 text-xl font-semibold bg-black/20 backdrop-blur-sm rounded-lg px-4 py-2 inline-block">
-                  🗓️ Dia 15 de Setembro • Participe e Concorra!
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent className="relative z-10 text-center pb-8">
-                <div className="bg-white/15 backdrop-blur-md rounded-xl p-6 mb-8 border border-white/20 shadow-xl">
-                  <h4 className="text-xl font-bold mb-4 text-yellow-300">📋 Requisitos para Participar:</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-                    <div className="flex items-center bg-white/10 rounded-lg p-3">
-                      <span className="text-green-400 mr-2">✅</span>
-                      <span>Seguir @mixguaraoficial no Instagram</span>
-                    </div>
-                    <div className="flex items-center bg-white/10 rounded-lg p-3">
-                      <span className="text-green-400 mr-2">✅</span>
-                      <span>Curtir a publicação oficial do sorteio</span>
-                    </div>
-                    <div className="flex items-center bg-white/10 rounded-lg p-3">
-                      <span className="text-green-400 mr-2">✅</span>
-                      <span>Marcar 3 amigos nos comentários</span>
-                    </div>
-                    <div className="flex items-center bg-white/10 rounded-lg p-3">
-                      <span className="text-green-400 mr-2">✅</span>
-                      <span>Ser cliente do Mix Guará</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    onClick={participarSorteio}
-                    size="lg"
-                    className="bg-gradient-to-r from-yellow-400/95 to-orange-400/95 text-black hover:from-yellow-300/95 hover:to-orange-300/95 shadow-2xl font-bold text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300 animate-pulse backdrop-blur-sm"
-                  >
-                    🎯 PARTICIPAR DO SORTEIO
-                  </Button>
-                  <Button
-                    onClick={openInstagram}
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-white/80 text-white hover:bg-white/25 backdrop-blur-md bg-white/15 shadow-xl transform hover:scale-105 transition-all duration-300"
-                  >
-                    <Instagram className="mr-2 h-5 w-5" />
-                    Ver no Instagram
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
           <div className="relative">
             <Card
               className={`bg-gradient-to-br ${promos[currentPromo].gradient} text-white animate-fade-in shadow-2xl border-0 overflow-hidden relative`}
@@ -647,36 +544,6 @@ export default function MixGuaraHome() {
                 />
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-800 mb-6">O que nossos clientes dizem</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto text-pretty text-xl">
-              Depoimentos reais de quem confia no Mix Guará
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-10">
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-xl transition-all duration-500 bg-white border-2 border-red-100 hover:border-red-300 transform hover:-translate-y-2"
-              >
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-4 italic leading-relaxed text-lg">"{testimonial.text}"</p>
-                  <p className="font-bold text-red-600 text-lg">- {testimonial.name}</p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
@@ -777,7 +644,7 @@ export default function MixGuaraHome() {
                     <div className="flex justify-between items-center p-2 rounded bg-red-50">
                       <span className="text-gray-700 font-medium">Segunda a Sábado:</span>
                       <div className="text-right">
-                        <div className="text-red-600 font-bold text-sm">07h00 – 11h00</div>
+                        <div className="text-red-600 font-bold text-sm">07h00 – 11h30</div>
                         <div className="text-red-600 font-bold text-sm">14h00 – 18h00</div>
                       </div>
                     </div>
