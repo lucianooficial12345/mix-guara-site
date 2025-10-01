@@ -175,7 +175,7 @@ export default function MixGuaraHome() {
             <div className="flex items-center space-x-3">
               <img
                 src="/logo-mixguara.png"
-                alt="Mix Guará Logo"
+                alt="Mix Guará Mini Atacarejo Logo"
                 className="h-20 w-auto hover:scale-105 transition-transform duration-300"
                 onError={(e) => {
                   e.currentTarget.src =
